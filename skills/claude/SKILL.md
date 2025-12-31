@@ -27,7 +27,7 @@ Activate this skill when the task involves:
 
 ## Document Locations
 
-All guideline documents are in: `[REPO_ROOT]/docs/`
+All guideline documents are in: `[REPO_ROOT]/guides/`
 
 ## Document Selection Guide
 

@@ -24,13 +24,13 @@ This repository contains a curated collection of Rust best practices, idioms, pa
 1. Clone this repo into your project or as a skill:
 
    ```bash
-   git clone https://github.com/oxur/rust-ai-guidelines.git
+   git clone https://github.com/oxur/ai-rust.git
    ```
 
 2. Reference in your `CLAUDE.md` or project instructions:
 
    ```markdown
-   When writing Rust code, follow guidelines in `./rust-ai-guidelines/docs/`.
+   When writing Rust code, follow guidelines in `./ai-rust/guides/`.
    Always check `11-anti-patterns.md` before writing new code.
    ```
 
@@ -45,27 +45,27 @@ Copy the relevant markdown files into your context or system prompt. Start with:
 ## Repository Structure
 
 ```
-rust-ai-guidelines/
-├── README.md                 # This file
-├── LICENSE                   # MIT License
-├── docs/                     # The guidelines
-│   ├── README.md             # Document index
-│   ├── 01-core-idioms.md     # Essential Rust idioms
-│   ├── 02-api-design.md      # Public API design
-│   ├── 03-error-handling.md  # Result, Option, error types
+ai-rust/
+├── README.md                      # This file
+├── LICENSE                        # MIT License
+├── guides/                        # The guidelines
+│   ├── README.md                  # Document index
+│   ├── 01-core-idioms.md          # Essential Rust idioms
+│   ├── 02-api-design.md           # Public API design
+│   ├── 03-error-handling.md       # Result, Option, error types
 │   ├── 04-ownership-borrowing.md  # Lifetimes, borrowing
-│   ├── 05-type-design.md     # Structs, enums, newtypes
-│   ├── 06-traits.md          # Trait design patterns
+│   ├── 05-type-design.md          # Structs, enums, newtypes
+│   ├── 06-traits.md               # Trait design patterns
 │   ├── 07-concurrency-async.md    # Async, threading
-│   ├── 08-performance.md     # Optimization patterns
-│   ├── 09-unsafe-ffi.md      # Unsafe code, FFI
-│   ├── 10-macros.md          # Declarative & proc macros
-│   ├── 11-anti-patterns.md   # What NOT to do (critical!)
+│   ├── 08-performance.md          # Optimization patterns
+│   ├── 09-unsafe-ffi.md           # Unsafe code, FFI
+│   ├── 10-macros.md               # Declarative & proc macros
+│   ├── 11-anti-patterns.md        # What NOT to do (critical!)
 │   ├── 12-project-structure.md    # Crate organization
-│   └── 13-documentation.md   # Doc comments, rustdoc
-└── skills/                   # AI tool integrations
-    └── claude-code/
-        └── SKILL.md          # Claude Code skill definition
+│   └── 13-documentation.md        # Doc comments, rustdoc
+└── skills/                        # AI tool integrations
+    └── claude/
+        └── SKILL.md               # Claude Code skill definition
 ```
 
 ## Document Guide
