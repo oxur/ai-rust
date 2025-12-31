@@ -72,19 +72,19 @@ ai-rust/
 
 | Document | Description | Priority |
 |----------|-------------|----------|
-| [01-core-idioms](docs/01-core-idioms.md) | Essential patterns for everyday Rust | 🔴 Critical |
-| [02-api-design](docs/02-api-design.md) | Designing public APIs | 🔴 Critical |
-| [03-error-handling](docs/03-error-handling.md) | Result, Option, thiserror, anyhow | 🔴 Critical |
-| [04-ownership-borrowing](docs/04-ownership-borrowing.md) | Lifetimes, borrow checker strategies | 🔴 Critical |
-| [05-type-design](docs/05-type-design.md) | Structs, enums, newtypes, generics | 🟡 Important |
-| [06-traits](docs/06-traits.md) | Trait design and implementation | 🟡 Important |
-| [07-concurrency-async](docs/07-concurrency-async.md) | Async/await, Send/Sync, threading | 🟡 Important |
-| [08-performance](docs/08-performance.md) | Optimization without sacrificing clarity | 🟡 Important |
-| [09-unsafe-ffi](docs/09-unsafe-ffi.md) | Safe wrappers around unsafe code | 🟠 Specialized |
-| [10-macros](docs/10-macros.md) | macro_rules! and proc macros | 🟠 Specialized |
-| [11-anti-patterns](docs/11-anti-patterns.md) | **What NOT to do** | 🔴 Critical |
-| [12-project-structure](docs/12-project-structure.md) | Crate and module organization | 🟢 Reference |
-| [13-documentation](docs/13-documentation.md) | Doc comments and rustdoc | 🟢 Reference |
+| [01-core-idioms](guides/01-core-idioms.md) | Essential patterns for everyday Rust | 🔴 Critical |
+| [02-api-design](guides/02-api-design.md) | Designing public APIs | 🔴 Critical |
+| [03-error-handling](guides/03-error-handling.md) | Result, Option, thiserror, anyhow | 🔴 Critical |
+| [04-ownership-borrowing](guides/04-ownership-borrowing.md) | Lifetimes, borrow checker strategies | 🔴 Critical |
+| [05-type-design](guides/05-type-design.md) | Structs, enums, newtypes, generics | 🟡 Important |
+| [06-traits](guides/06-traits.md) | Trait design and implementation | 🟡 Important |
+| [07-concurrency-async](guides/07-concurrency-async.md) | Async/await, Send/Sync, threading | 🟡 Important |
+| [08-performance](guides/08-performance.md) | Optimization without sacrificing clarity | 🟡 Important |
+| [09-unsafe-ffi](guides/09-unsafe-ffi.md) | Safe wrappers around unsafe code | 🟠 Specialized |
+| [10-macros](guides/10-macros.md) | macro_rules! and proc macros | 🟠 Specialized |
+| [11-anti-patterns](guides/11-anti-patterns.md) | **What NOT to do** | 🔴 Critical |
+| [12-project-structure](guides/12-project-structure.md) | Crate and module organization | 🟢 Reference |
+| [13-documentation](guides/13-documentation.md) | Doc comments and rustdoc | 🟢 Reference |
 
 ## Usage Patterns
 
