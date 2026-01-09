@@ -8,8 +8,10 @@ Comprehensive best practices for Cargo, Rust's package manager. These guides pro
 |-------|---------------|--------------|
 | **[01: Cargo Basics](./01-cargo-basics.md)** | Package creation, dependencies, workspaces, layouts | Start here if new to Cargo or creating a new project |
 | **[02: Build System](./02-cargo-build-system.md)** | Features, profiles, build scripts, native libraries | When setting up features or optimizing builds |
+| **[03: Cargo Plugins](./03-cargo-plugins.md)** | Custom subcommands, cargo metadata, plugin distribution | When building tools that extend cargo functionality |
 | **[04: Publishing](./04-cargo-publishing.md)** | crates.io, SemVer, versioning, releases | Before publishing your first crate or making a release |
 | **[05: Configuration](./05-cargo-configuration.md)** | .cargo/config.toml, environment variables, targets | When customizing Cargo for your project or machine |
+| **[06: Advanced](./06-cargo-advanced.md)** | Build optimization, CI/CD, unstable features, diagnostics | When optimizing builds or setting up sophisticated workflows |
 
 ## 🎯 Quick Decision Tree
 
@@ -29,10 +31,13 @@ Comprehensive best practices for Cargo, Rust's package manager. These guides pro
 
 ### Optimize build times
 → **[02: Build System](./02-cargo-build-system.md)** - CG-BS-06, CG-BS-12  
-→ **[05: Configuration](./05-cargo-configuration.md)** - CG-CF-04, CG-CF-08
+→ **[06: Advanced](./06-cargo-advanced.md)** - CG-A-01, CG-A-02, CG-A-10
 
 ### Compile native code or link libraries
 → **[02: Build System](./02-cargo-build-system.md)** - CG-BS-08 through CG-BS-11
+
+### Build a cargo plugin or subcommand
+→ **[03: Cargo Plugins](./03-cargo-plugins.md)** - CG-P-01 through CG-P-12
 
 ### Publish to crates.io
 → **[04: Publishing](./04-cargo-publishing.md)** - CG-PUB-01, CG-PUB-02, CG-PUB-12
@@ -50,7 +55,17 @@ Comprehensive best practices for Cargo, Rust's package manager. These guides pro
 → **[05: Configuration](./05-cargo-configuration.md)** - CG-CF-06, CG-CF-07
 
 ### Configure CI/CD
-→ **[05: Configuration](./05-cargo-configuration.md)** - CG-CF-02, CG-CF-08, CG-CF-10
+→ **[05: Configuration](./05-cargo-configuration.md)** - CG-CF-02, CG-CF-08, CG-CF-10  
+→ **[06: Advanced](./06-cargo-advanced.md)** - CG-A-03, CG-A-08, CG-A-09
+
+### Speed up my CI builds
+→ **[06: Advanced](./06-cargo-advanced.md)** - CG-A-03, CG-A-04, CG-A-08
+
+### Use unstable features safely
+→ **[06: Advanced](./06-cargo-advanced.md)** - CG-A-06
+
+### Manage dependencies strategically
+→ **[06: Advanced](./06-cargo-advanced.md)** - CG-A-11, CG-A-12
 
 ## 📖 Pattern Naming Convention
 
@@ -62,8 +77,10 @@ All patterns follow the format: `[PREFIX]-[NUMBER]: [Pattern Name]`
 |--------|-------|-------|
 | `CG-B-XX` | Cargo Basics | Package management fundamentals |
 | `CG-BS-XX` | Build System | Features, profiles, build scripts |
+| `CG-P-XX` | Cargo Plugins | Custom subcommands and extensibility |
 | `CG-PUB-XX` | Publishing | crates.io and versioning |
 | `CG-CF-XX` | Configuration | Project and user configuration |
+| `CG-A-XX` | Advanced | Optimization, CI/CD, diagnostics |
 
 ### Strength Indicators
 
@@ -170,8 +187,9 @@ Please provide feedback or contributions!
 ### "My build is slow"
 1. Check [CG-BS-06](./02-cargo-build-system.md#cg-bs-06) for dev profile optimization
 2. Check [CG-BS-12](./02-cargo-build-system.md#cg-bs-12) for incremental compilation
-3. Check [CG-CF-04](./05-cargo-configuration.md#cg-cf-04) for build configuration
-4. Consider using a faster linker (lld or mold)
+3. Check [CG-A-01](./06-cargo-advanced.md#cg-a-01) for debug info reduction
+4. Check [CG-A-02](./06-cargo-advanced.md#cg-a-02) for alternative linkers (mold, lld, zld)
+5. Check [CG-A-10](./06-cargo-advanced.md#cg-a-10) to analyze build timings
 
 ### "cargo publish failed"
 1. Check [CG-PUB-01](./04-cargo-publishing.md#cg-pub-01) for required metadata
@@ -191,6 +209,20 @@ Please provide feedback or contributions!
 1. Review [CG-BS-01](./02-cargo-build-system.md#cg-bs-01) for additive features principle
 2. Check [CG-BS-02](./02-cargo-build-system.md#cg-bs-02) for optional dependencies
 3. Check [CG-BS-03](./02-cargo-build-system.md#cg-bs-03) for naming conventions
+
+### "My cargo plugin isn't working"
+1. Check [CG-P-01](./03-cargo-plugins.md#cg-p-01) for naming convention (must be `cargo-*`)
+2. Check [CG-P-02](./03-cargo-plugins.md#cg-p-02) for argument handling
+3. Check [CG-P-03](./03-cargo-plugins.md#cg-p-03) for `--help` integration
+
+### "CI builds are taking forever"
+1. Check [CG-A-03](./06-cargo-advanced.md#cg-a-03) for proper CI caching
+2. Check [CG-A-08](./06-cargo-advanced.md#cg-a-08) for CI pipeline design
+3. Check [CG-A-04](./06-cargo-advanced.md#cg-a-04) for incremental compilation in CI
+
+### "Getting future incompatibility warnings"
+1. Check [CG-A-12](./06-cargo-advanced.md#cg-a-12) for handling future incompatibilities
+2. Check [CG-A-11](./06-cargo-advanced.md#cg-a-11) for dependency update strategies
 
 ## 🌐 External Resources
 
@@ -219,6 +251,6 @@ These guides are provided as educational material for the Rust community.
 
 **Last Updated**: 2026-01-09
 
-**Version**: 1.0.0
+**Version**: 2.0.0
 
-**Guides Included**: 4 (Basics, Build System, Publishing, Configuration)
+**Guides Included**: 6 (Basics, Build System, Plugins, Publishing, Configuration, Advanced)
