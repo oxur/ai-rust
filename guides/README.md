@@ -3,13 +3,13 @@
 > Comprehensive collection of Rust idioms, patterns, and best practices for writing idiomatic, safe, and performant code.
 
 **Last Updated**: 2026-01-09
-**Total Patterns**: 509 across 14 collections
+**Total Patterns**: 561 across 15 collections
 
 ---
 
 ## Document Index
 
-This collection is organized into 14 focused areas covering all aspects of Rust development:
+This collection is organized into 15 focused areas covering all aspects of Rust development:
 
 | Document | Pattern Count | Pattern ID Range | Description |
 |----------|--------------|------------------|-------------|
@@ -26,6 +26,7 @@ This collection is organized into 14 focused areas covering all aspects of Rust 
 | [11. Anti-patterns](./11-anti-patterns.md) | 80 | AP-01 to AP-80 | Common pitfalls and how to avoid them |
 | [12. Project Structure](./12-project-structure.md) | 31 | PS-01 to PS-31 | Organizing Rust projects |
 | [13. Documentation](./13-documentation.md) | 35 | DC-01 to DC-35 | Writing excellent documentation |
+| [14. CLI Tools](./14-cli-tools/) | 52 | CLI-01 to CLI-52 | Building command-line applications |
 | [15. Cargo Mastery](./15-cargo/) | 74 | CG-* (6 guides) | Package management, builds, publishing, plugins |
 
 ---
@@ -59,6 +60,41 @@ Load cargo guides when working with:
 - **SemVer compliance**: CG-PUB-03, CG-PUB-04 (versioning, breaking changes)
 - **Build optimization**: CG-BS-06, CG-A-01, CG-A-02 (faster compilation)
 - **CI/CD**: CG-CF-02, CG-A-03, CG-A-08 (continuous integration setup)
+
+---
+
+## CLI Tools Guide Collection
+
+The **14-cli-tools/** directory contains comprehensive guidance for building command-line applications:
+
+| Section | Patterns | Pattern Range | Topics Covered |
+|---------|----------|---------------|----------------|
+| [🚀 Project Setup](./14-cli-tools/01-project-setup.md) | 4 | CLI-01 to CLI-04 | Binary structure, Cargo.toml, lib/bin separation |
+| [⚙️ Argument Parsing](./14-cli-tools/02-argument-parsing.md) | 11 | CLI-05 to CLI-15 | Clap derive, flags, subcommands, validation |
+| [❌ Error Handling](./14-cli-tools/03-error-handling.md) | 5 | CLI-16 to CLI-20 | Exit codes, error messages, stderr |
+| [🎨 Output & UX](./14-cli-tools/04-output-and-ux.md) | 8 | CLI-21 to CLI-28 | Human/machine output, progress, colors |
+| [⚙️ Configuration](./14-cli-tools/05-configuration.md) | 5 | CLI-29 to CLI-33 | Config files, precedence, XDG directories |
+| [🧪 Testing](./14-cli-tools/06-testing.md) | 5 | CLI-34 to CLI-38 | assert_cmd, integration tests, snapshots |
+| [📦 Distribution](./14-cli-tools/07-distribution.md) | 4 | CLI-39 to CLI-42 | Binary size, cross-compilation, packaging |
+| [🔧 Advanced Topics](./14-cli-tools/08-advanced-topics.md) | 6 | CLI-43 to CLI-48 | Signals, completions, plugins, async |
+| [⚠️ Common Pitfalls](./14-cli-tools/09-common-pitfalls.md) | 4 | CLI-49 to CLI-52 | Anti-patterns to avoid |
+
+**Quick Navigation**: See [14-cli-tools/README.md](./14-cli-tools/README.md) for complete pattern index and examples.
+
+### When to Use CLI Tools Guides
+
+Load CLI guides when building command-line applications:
+
+- **Starting a CLI project**: CLI-01, CLI-02, CLI-03, CLI-04 (project structure, dependencies)
+- **Parsing arguments**: CLI-05, CLI-06, CLI-07, CLI-08 (clap derive, flags, options)
+- **Subcommands**: CLI-10 (subcommand patterns with enums)
+- **Help and version**: CLI-14, CLI-15 (documentation, version info)
+- **Error handling**: CLI-16, CLI-17, CLI-20 (exit codes, error messages, stderr)
+- **User experience**: CLI-21, CLI-22, CLI-23 (output formats, progress, colors)
+- **Configuration**: CLI-29, CLI-30, CLI-31 (config files, locations, precedence)
+- **Testing CLIs**: CLI-34, CLI-35, CLI-37 (assert_cmd, integration tests)
+- **Distribution**: CLI-39, CLI-40, CLI-42 (binary optimization, releases)
+- **Advanced features**: CLI-43, CLI-44, CLI-48 (signals, completions, piping)
 
 ---
 
@@ -102,8 +138,9 @@ Start with these foundational documents:
 1. **01-core-idioms.md** - Learn fundamental Rust patterns
 2. **04-ownership-borrowing.md** - Master Rust's unique ownership system
 3. **03-error-handling.md** - Handle errors the Rust way
-4. **15-cargo/01-cargo-basics.md** - Create and manage Rust projects
-5. **11-anti-patterns.md** - Avoid common mistakes
+4. **14-cli-tools/01-project-setup.md** - Build your first CLI tool
+5. **15-cargo/01-cargo-basics.md** - Create and manage Rust projects
+6. **11-anti-patterns.md** - Avoid common mistakes
 
 ### For Intermediate Developers
 
@@ -134,6 +171,16 @@ Essential guides for publishing crates:
 3. **15-cargo/04-cargo-publishing.md** - Publish to crates.io
 4. **15-cargo/03-cargo-plugins.md** - Build cargo extensions
 
+### For CLI Tool Developers
+
+Complete guide to building command-line applications:
+
+1. **14-cli-tools/01-project-setup.md** - Set up CLI project structure
+2. **14-cli-tools/02-argument-parsing.md** - Parse arguments with clap
+3. **14-cli-tools/03-error-handling.md** - Handle CLI errors properly
+4. **14-cli-tools/04-output-and-ux.md** - Create polished user experience
+5. **14-cli-tools/06-testing.md** - Test CLI applications
+
 ### For All Developers
 
 Essential reference materials:
@@ -146,10 +193,11 @@ Essential reference materials:
 
 ## Quick Stats
 
-- **Total Patterns**: 509
-- **Document Collections**: 14 (13 single docs + 1 multi-guide collection)
+- **Total Patterns**: 561
+- **Document Collections**: 15 (13 single docs + 2 multi-guide collections)
 - **Cargo Guide Patterns**: 74 across 6 specialized guides
-- **Code Examples**: 550+ `rust` and `bash` code blocks
+- **CLI Tools Patterns**: 52 across 9 focused sections
+- **Code Examples**: 620+ `rust` and `bash` code blocks
 - **Pattern Categories**:
   - Core Idioms & Patterns: 42
   - API Design: 59
@@ -161,6 +209,7 @@ Essential reference materials:
   - Anti-patterns: 80
   - Project Organization: 66 (Structure + Documentation)
   - **Cargo & Build System: 74** (Cargo Mastery collection)
+  - **CLI Development: 52** (CLI Tools collection)
 
 ---
 
@@ -172,6 +221,8 @@ This collection merges and consolidates patterns from multiple authoritative Rus
 - **Rust Design Patterns**: Community-maintained pattern catalog
 - **Rust Performance Book**: Performance best practices
 - **The Cargo Book**: Official Cargo documentation and best practices
+- **Command Line Applications in Rust**: CLI development guide (rust-cli.github.io)
+- **Clap Documentation**: Argument parsing best practices (clap-rs)
 - **Clippy Lints**: Static analysis recommendations
 - **Rust RFC discussions**: Language evolution insights
 - **Production Rust codebases**: Real-world patterns
@@ -205,6 +256,8 @@ Patterns frequently reference each other across documents. Look for **See also**
 - **Build optimization**: PF-*, CG-BS-06, CG-A-01, CG-A-02
 - **Publishing workflow**: CG-PUB-*, API-*, DC-*
 - **Project organization**: PS-*, CG-B-10, CG-B-11
+- **CLI development**: CLI-*, EH-*, API-*
+- **Error handling patterns**: EH-*, CLI-16 through CLI-20
 
 ---
 
