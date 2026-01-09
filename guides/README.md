@@ -2,14 +2,14 @@
 
 > Comprehensive collection of Rust idioms, patterns, and best practices for writing idiomatic, safe, and performant code.
 
-**Last Updated**: 2025-12-31
-**Total Patterns**: 435 across 13 documents
+**Last Updated**: 2026-01-09
+**Total Patterns**: 509 across 14 collections
 
 ---
 
 ## Document Index
 
-This collection is organized into 13 focused areas covering all aspects of Rust development:
+This collection is organized into 14 focused areas covering all aspects of Rust development:
 
 | Document | Pattern Count | Pattern ID Range | Description |
 |----------|--------------|------------------|-------------|
@@ -26,6 +26,39 @@ This collection is organized into 13 focused areas covering all aspects of Rust 
 | [11. Anti-patterns](./11-anti-patterns.md) | 80 | AP-01 to AP-80 | Common pitfalls and how to avoid them |
 | [12. Project Structure](./12-project-structure.md) | 31 | PS-01 to PS-31 | Organizing Rust projects |
 | [13. Documentation](./13-documentation.md) | 35 | DC-01 to DC-35 | Writing excellent documentation |
+| [15. Cargo Mastery](./15-cargo/) | 74 | CG-* (6 guides) | Package management, builds, publishing, plugins |
+
+---
+
+## Cargo Mastery Guide Collection
+
+The **15-cargo/** directory contains 6 specialized guides covering all aspects of Cargo:
+
+| Guide | Patterns | Pattern Range | Use When |
+|-------|----------|---------------|----------|
+| [📦 Cargo Basics](./15-cargo/01-cargo-basics.md) | 12 | CG-B-01 to CG-B-12 | Creating packages, managing dependencies, workspaces |
+| [⚙️ Build System](./15-cargo/02-cargo-build-system.md) | 12 | CG-BS-01 to CG-BS-12 | Features, profiles, build scripts, optimization |
+| [🔌 Cargo Plugins](./15-cargo/03-cargo-plugins.md) | 12 | CG-P-01 to CG-P-12 | Building custom cargo subcommands and tools |
+| [📤 Publishing](./15-cargo/04-cargo-publishing.md) | 13 | CG-PUB-01 to CG-PUB-13 | Publishing to crates.io, SemVer, versioning |
+| [⚙️ Configuration](./15-cargo/05-cargo-configuration.md) | 12 | CG-CF-01 to CG-CF-12 | .cargo/config.toml, environment variables |
+| [🚀 Advanced](./15-cargo/06-cargo-advanced.md) | 13 | CG-A-01 to CG-A-13 | CI/CD, optimization, unstable features |
+
+**Quick Navigation**: See [15-cargo/README.md](./15-cargo/README.md) for a comprehensive decision tree and troubleshooting guide.
+
+### When to Use Cargo Guides
+
+Load cargo guides when working with:
+
+- **Package creation**: CG-B-01, CG-B-02, CG-B-03 (cargo new, init, project setup)
+- **Dependencies**: CG-B-07, CG-B-08, CG-B-09 (version specifications, workspace deps)
+- **Workspaces**: CG-B-10, CG-B-11 (multi-crate projects, shared dependencies)
+- **Features**: CG-BS-01 through CG-BS-05 (feature flags, optional deps)
+- **Build scripts**: CG-BS-08 through CG-BS-11 (build.rs, native libraries)
+- **Custom cargo commands**: CG-P-01 through CG-P-12 (plugin development)
+- **Publishing**: CG-PUB-01, CG-PUB-02, CG-PUB-12 (preparing for crates.io)
+- **SemVer compliance**: CG-PUB-03, CG-PUB-04 (versioning, breaking changes)
+- **Build optimization**: CG-BS-06, CG-A-01, CG-A-02 (faster compilation)
+- **CI/CD**: CG-CF-02, CG-A-03, CG-A-08 (continuous integration setup)
 
 ---
 
@@ -69,7 +102,8 @@ Start with these foundational documents:
 1. **01-core-idioms.md** - Learn fundamental Rust patterns
 2. **04-ownership-borrowing.md** - Master Rust's unique ownership system
 3. **03-error-handling.md** - Handle errors the Rust way
-4. **11-anti-patterns.md** - Avoid common mistakes
+4. **15-cargo/01-cargo-basics.md** - Create and manage Rust projects
+5. **11-anti-patterns.md** - Avoid common mistakes
 
 ### For Intermediate Developers
 
@@ -79,6 +113,7 @@ Focus on these areas to level up:
 2. **05-type-design.md** - Leverage the type system effectively
 3. **06-traits.md** - Master trait-based design
 4. **08-performance.md** - Optimize your code
+5. **15-cargo/02-cargo-build-system.md** - Master features and build configuration
 
 ### For Advanced Practitioners
 
@@ -88,6 +123,16 @@ Explore specialized topics:
 2. **09-unsafe-ffi.md** - Safe unsafe code and FFI bindings
 3. **10-macros.md** - Metaprogramming with macros
 4. **12-project-structure.md** - Architect large projects
+5. **15-cargo/06-cargo-advanced.md** - Build optimization and CI/CD
+
+### For Library Authors
+
+Essential guides for publishing crates:
+
+1. **02-api-design.md** - Design ergonomic public APIs
+2. **13-documentation.md** - Document your crate effectively
+3. **15-cargo/04-cargo-publishing.md** - Publish to crates.io
+4. **15-cargo/03-cargo-plugins.md** - Build cargo extensions
 
 ### For All Developers
 
@@ -95,14 +140,16 @@ Essential reference materials:
 
 1. **13-documentation.md** - Document your code effectively
 2. **11-anti-patterns.md** - Comprehensive anti-pattern catalog (80 patterns!)
+3. **15-cargo/README.md** - Quick reference for cargo workflows
 
 ---
 
 ## Quick Stats
 
-- **Total Patterns**: 435
-- **Documents**: 13
-- **Code Examples**: 479+ `rust` code blocks
+- **Total Patterns**: 509
+- **Document Collections**: 14 (13 single docs + 1 multi-guide collection)
+- **Cargo Guide Patterns**: 74 across 6 specialized guides
+- **Code Examples**: 550+ `rust` and `bash` code blocks
 - **Pattern Categories**:
   - Core Idioms & Patterns: 42
   - API Design: 59
@@ -113,6 +160,7 @@ Essential reference materials:
   - Advanced Topics: 42 (Unsafe/FFI + Macros)
   - Anti-patterns: 80
   - Project Organization: 66 (Structure + Documentation)
+  - **Cargo & Build System: 74** (Cargo Mastery collection)
 
 ---
 
@@ -123,9 +171,11 @@ This collection merges and consolidates patterns from multiple authoritative Rus
 - **Rust API Guidelines**: Official API design guidelines
 - **Rust Design Patterns**: Community-maintained pattern catalog
 - **Rust Performance Book**: Performance best practices
+- **The Cargo Book**: Official Cargo documentation and best practices
 - **Clippy Lints**: Static analysis recommendations
 - **Rust RFC discussions**: Language evolution insights
 - **Production Rust codebases**: Real-world patterns
+- **crates.io ecosystem**: Library publishing and maintenance patterns
 
 All patterns have been deduplicated, merged, and organized for maximum clarity and utility.
 
@@ -133,7 +183,7 @@ All patterns have been deduplicated, merged, and organized for maximum clarity a
 
 ## Contributing
 
-These guidelines represent current best practices as of 2025-12-31. The Rust ecosystem evolves rapidly:
+These guidelines represent current best practices as of 2026-01-09. The Rust ecosystem evolves rapidly:
 
 - Patterns marked **MUST** are stable and unlikely to change
 - Patterns marked **SHOULD** represent current consensus
@@ -152,6 +202,9 @@ Patterns frequently reference each other across documents. Look for **See also**
 - **Memory safety**: OB-*, US-*, EH-*
 - **API ergonomics**: API-*, TD-*, TR-*
 - **Compile-time guarantees**: TD-*, TR-*, MC-*
+- **Build optimization**: PF-*, CG-BS-06, CG-A-01, CG-A-02
+- **Publishing workflow**: CG-PUB-*, API-*, DC-*
+- **Project organization**: PS-*, CG-B-10, CG-B-11
 
 ---
 
